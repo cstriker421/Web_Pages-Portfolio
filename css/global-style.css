@@ -30,6 +30,37 @@ body {
     transition: color 0.3s ease;
 }
 
+.nav-footer {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center content */
+    padding: 20px;
+    background-color: #f4f4f4; /* Match the header background */
+    border-top: 1px solid #ddd; /* Optional top border for separation */
+    position: relative; /* Optional: Create context for positioning */
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box; 
+    text-align: center;
+}
+
+.footer-nav-links {
+    display: flex;
+    gap: 15px;
+    margin: 0 0 10px;
+}
+
+.footer-nav-links a:hover {
+    color: #007BFF;
+}
+
+.nav-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
 .nav-links a:hover {
     color: #007BFF;
 }
