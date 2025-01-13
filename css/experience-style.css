@@ -1,0 +1,112 @@
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.experience-container h3 {
+    font-size: 2rem;
+    color: #007BFF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.experience-details {
+    margin-bottom: 20px;
+}
+
+.experience-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-left: 4px solid #007BFF;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.skills ul {
+    list-style-type: disc;
+    margin: 10px 20px;
+    padding-left: 20px;
+}
+
+.skills li {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.workplaces {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.workplaces p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.5;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+thead {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+table tbody td {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .workplaces {
+        padding: 15px;
+    }
+
+    table th, table td {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .workplaces p {
+        font-size: 0.95rem;
+    }
+}
