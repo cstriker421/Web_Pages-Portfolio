@@ -1,3 +1,26 @@
+:root{
+    --base-color: white;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+}
+
+.darkmode{
+    --base-color: #070b1d;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 body, p, a {
     margin: 0;
     font-family: Merriweather, sans-serif;
@@ -14,7 +37,7 @@ body {
     justify-content: flex-end;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f4f4f4;
+    background-color: var(--base-color);
     border-bottom: 1px solid #ddd;
     position: sticky;
     top: 0;
@@ -22,23 +45,15 @@ body {
     box-sizing: border-box;
 }
 
-.nav-links a {
-    text-decoration: none;
-    margin: 0 10px;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
 .nav-footer {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center content */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    background-color: #f4f4f4; /* Match the header background */
-    border-top: 1px solid #ddd; /* Optional top border for separation */
-    position: relative; /* Optional: Create context for positioning */
+    background-color: #f4f4f4;
+    border-top: 1px solid #ddd;
+    position: relative;
     bottom: 0;
     width: 100%;
     box-sizing: border-box; 
