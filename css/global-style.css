@@ -87,7 +87,7 @@ nav svg {
     display: none;
 }
 
-@media(max-width: 450px) {
+@media(max-width: 350px) {
     .links-container {
       flex-direction: column;
       align-items: flex-start;
