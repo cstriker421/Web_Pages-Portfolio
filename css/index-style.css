@@ -1,4 +1,4 @@
-.intro-header {
+.intro-div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,11 +32,18 @@
     color: inherit;
 }
 
-body.darkmode .intro-content {
-    background-color: var(--base-variant);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+.image-content img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     border-radius: 8px;
-    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.image-content img:hover {
+    transform: scale(1.05);
 }
 
 .programs-section {
@@ -45,10 +52,14 @@ body.darkmode .intro-content {
     margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 640px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .programs-section h2 {
     margin-bottom: 30px;
+    font-size: 1.8rem;
 }
 
 .icons-container {
@@ -56,22 +67,19 @@ body.darkmode .intro-content {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-
+    padding: 10px;
+    max-width: 100%;
 }
 
 .icons-container a {
     display: inline-block;
+    max-width: 120px;
+    text-align: center;
 }
 
 .icons-container a:hover {
     transform: scale(1.1);
-}
-
-.image-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .icon {
@@ -96,40 +104,58 @@ body.darkmode .intro-content {
     fill: #797979;
 }
 
+@media (max-width: 768px) {
+    .icons-container {
+        gap: 20px;
+    }
+
+    .icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
 @media (max-width: 450px) {
     .intro-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
+        gap: 20px;
     }
 
     .text-content {
         max-width: 90%;
         margin: 0 auto;
     }
-    
+
+    .text-content h1 {
+        font-size: 2rem;
+    }
+
     .image-content img {
-        max-width: 25%;
+        max-width: 200px;
         margin: 0 auto;
     }
 
+    .programs-section {
+        padding: 20px 10px;
+    }
+
+    .programs-section h2 {
+        font-size: 1.5rem;
+    }
+
     .icons-container {
-        gap: 20px;
+        gap: 15px;
     }
 
     .icons {
         width: 60px;
         height: 60px;
     }
+
+    .icons a {
+        max-width: 80px;
+    }
 }
 
-.image-content img {
-    max-width: 500px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.image-content img:hover {
-    transform: scale(1.05);
-}

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Experience</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="/../css/global-style.css">
-        <link rel="stylesheet" href="/../css/contact-style.css">
-        <script type="text/javascript" src="/../script/darkmode.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/../css/global-style.css">
+    <link rel="stylesheet" href="/../css/contact-style.css">
+    <script type="text/javascript" src="/../script/darkmode.js" defer></script>
+    <script type="text/javascript" src="/../script/validation.js" defer></script>
+</head>
 <body>
     <header class="nav-header">
         <button id="theme-switch">
@@ -49,46 +50,39 @@
     </header>
     <div class="contact-container">
         <h3>Contact Me</h3>
-        <form action="/contact" method="post">
+        <form id="contactForm">
             <div class="form-grid">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    <span class="error-message" id="nameError"></span>
                 </div>
                 <div class="form-group">
-                    <label for="region">Region:</label>
-                    <select id="region" name="region" required>
-                        <option value="">-- Select --</option>
-                        <option value="porto&north">Porto and North</option>
-                        <option value="lisbon&tagus">Lisbon and Tagus Valley</option>
-                        <option value="alentejo">Alentejo</option>
-                        <option value="algarve">Algarve</option>
-                        <option value="azores">Azores Islands</option>
-                        <option value="madeira">Madeira</option>
-                    </select>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    <span class="error-message" id="emailError"></span>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
+                <div class="form-group"></div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                    <span class="error-message" id="phoneError"></span>
                 </div>
             </div>
             <div class="form-group full-width">
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <span class="error-message" id="messageError"></span>
             </div>
-            <button type="submit">Submit</button>
+            <div class="button-container">
+                <button type="submit" id="submit-button">Submit</button>
+            </div>
+            <script src="/../script/validation.js"></script>
         </form>
-        <p>Email: <a href="mailto:giulio_marani@eticalgarve.com">giulio_marani@eticalgarve.com</a></p>
+        <p>Email: <a href="mailto:giuliodavoliomarani@gmail.com">giuliodavoliomarani@gmail.com</a></p>
         <p>Phone Number: +351 LOL NOPE</p>
-        <hr>
-    </div>    
-    <hr>
+    </div>
+
     <footer class="nav-footer">
-        <br>
         <p>&copy; 2025 Giulio Davolio Marani. All rights reserved.</p>
     </footer>
 </body>

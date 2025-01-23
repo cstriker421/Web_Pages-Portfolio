@@ -39,10 +39,22 @@ input, select, textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
 }
 
-button {
-    padding: 10px 20px;
+.error-message {
+    font-size: 0.85rem;
+    color: #8a0002;
+    display: none;
+    margin-top: 5px;
+}
+
+button-container {
+    text-align: center;
+}
+
+.submit-button {
+    padding: 0.75rem;
     font-size: 1rem;
     color: #fff;
     background-color: #007BFF;
@@ -50,10 +62,22 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-button:hover {
+.submit-button:hover {
     background-color: #0056b3;
+}
+
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF;
+}
+
+input:invalid:focus:not(.pristine),
+select:invalid:focus:not(.pristine),
+textarea:invalid:focus:not(.pristine) {
+    border-color: red;
 }
 
 .contact-container p {
@@ -85,7 +109,7 @@ button:hover {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 450px) {
     .contact-container {
         padding: 15px;
     }
