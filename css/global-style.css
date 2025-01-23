@@ -51,10 +51,7 @@ nav {
     background-color: var(--base-variant);
 }
 
-body.darkmode .links-container {
-    background-color: var(--dark-color-1);
-}
-nav a{
+nav a {
     height: 100%;
     padding: 0 20px;
     display: flex;
@@ -79,10 +76,10 @@ nav svg {
     display: none;
 }
 
-@media(max-width: 350px) {
+@media(max-width: 450px) {
     .links-container {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: flex-end;
   
       position: fixed;
       top: 0;
@@ -94,6 +91,7 @@ nav svg {
       box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
       transition: 0.75s ease-out;
     }
+
     nav a {
         box-sizing: border-box;
         height: auto;
@@ -101,14 +99,17 @@ nav svg {
         padding: 20px 30px;
         justify-content: flex-start;
     }
+
     .open-sidebar-button, .close-sidebar-button {
         padding: 20px;
         display: block;
     }
+
     #sidebar-active:checked ~ .links-container {
         right: 0;
         background-color: var(--base-variant);
     }
+
     #sidebar-active:checked ~ #overlay {
         height: 100%;
         width: 100%;
@@ -121,7 +122,7 @@ nav svg {
 
 header, section {
     padding: 70px min(50px, 7%);
-  }
+}
 
 section {
     background-color: var(--base-variant);
@@ -142,7 +143,7 @@ button {
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
-  }
+}
 
 .cta-button {
     background-color: var(--accent-color);
