@@ -1,42 +1,49 @@
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
 
-    const errorElements = document.querySelectorAll('.error-message');
-    errorElements.forEach(el => el.style.display = 'none');
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); // Prevent the form from submitting
+        let isValid = true;
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
+        const fields = form.querySelectorAll("input, textarea");
 
-    let isValid = true;
+        fields.forEach((field) => {
+            const errorMessage = field.parentElement.querySelector(".error-message");
 
-    if (name === '') {
-        document.getElementById('nameError').textContent = 'A name is required';
-        document.getElementById('nameError').style.display = 'block';
-        isValid = false;
-    }
+            if (!field.validity.valid) {
+                // Show custom error messages
+                if (field.validity.valueMissing) {
+                    errorMessage.textContent = `${field.name} is required.`;
+                } else if (field.type === "email" && field.validity.typeMismatch) {
+                    errorMessage.textContent = "Please enter a valid email address.";
+                } else if (field.type === "tel" && field.validity.patternMismatch) {
+                    errorMessage.textContent = "Please enter a valid phone number.";
+                }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email === '' || !emailPattern.test(email)) {
-        document.getElementById('emailError').textContent = 'A valid email is required';
-        document.getElementById('emailError').style.display = 'block';
-        isValid = false;
-    }
+                errorMessage.style.display = "block";
+                field.classList.add("invalid");
+                isValid = false;
+            } else {
+                // Clear the error message for valid fields
+                errorMessage.textContent = "";
+                errorMessage.style.display = "none";
+                field.classList.remove("invalid");
+            }
+        });
 
-    const phonePattern = /^[0-9]{10}$/;
-    if (phone === '' || !phonePattern.test(phone)) {
-        document.getElementById('phoneError').textContent = 'A valid phone number is required';
-        document.getElementById('phoneError').style.display = 'block';
-        isValid = false;
-    }
+        if (isValid) {
+            form.submit(); // Submit the form if everything is valid
+        }
+    });
 
-    if (message === '') {
-        document.getElementById('messageError').textContent = 'A message is required';
-        document.getElementById('messageError').style.display = 'block';
-        isValid = false;
-    }
-    if (isValid) {
-        alert('Form was submitted successfully!');
-    }
+    form.addEventListener("input", (event) => {
+        const field = event.target;
+        const errorMessage = field.parentElement.querySelector(".error-message");
+
+        if (field.validity.valid) {
+            errorMessage.textContent = "";
+            errorMessage.style.display = "none";
+            field.classList.remove("invalid");
+        }
+    });
 });

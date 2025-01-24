@@ -6,7 +6,7 @@
     padding: 20px;
     margin: 0 auto;
     max-width: 600px;
-    text-align: left;
+    text-align: center;
     background-color: var(--base-variant);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -25,6 +25,7 @@ form {
 
 .form-group.full-width {
     grid-column: span 2;
+    margin-bottom: 30px;
 }
 
 .form-group {
@@ -42,15 +43,10 @@ input, select, textarea {
     transition: border-color 0.3s ease;
 }
 
-.error-message {
-    font-size: 0.85rem;
-    color: #8a0002;
-    display: none;
-    margin-top: 5px;
-}
-
 button-container {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .submit-button {
@@ -65,19 +61,22 @@ button-container {
     margin-top: 20px;
 }
 
-.submit-button:hover {
+#submit-button:hover {
     background-color: #0056b3;
 }
 
+input:valid, textarea:valid {
+    border-color: #007BFF; /* Blue border for valid fields */
+    background-color: #f0f8ff;
+}
 
-input:focus, select:focus, textarea:focus {
+input:focus, textarea:focus {
+    outline: none;
     border-color: #007BFF;
 }
 
-input:invalid:focus:not(.pristine),
-select:invalid:focus:not(.pristine),
-textarea:invalid:focus:not(.pristine) {
-    border-color: red;
+input:not(.invalid):focus, textarea:(.invalid):focus {
+    border-color: #007BFF;
 }
 
 .contact-container p {
